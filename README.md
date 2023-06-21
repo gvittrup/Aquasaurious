@@ -14,12 +14,23 @@ The original design of Aquasaurious is a 2D endless scroller. Movement of the ch
 
 1. Main Menu 🐙
 
-![Main Menu](assets/mainMenu.png)
+<img src="assets/mainMenu.png" width="250" height="250" />
 
 2. Playing the game 🕹
 
-![Active Play](assets/activePlay.png)
+<img src="assets/activePlay.png" width="250" height="250" />
 
 3. Game Over ☠️
 
-![Game Over](assets/deathScreen.png)
+<img src="assets/deathScreen.png" width="250" height="250" />
+
+## Play it for yourself 🐡
+
+For a playable version of our original version visit https://studio.code.org/projects/gamelab/7nAVVwul7Kmwn9_Iz2PssriDj8BymqSIz8kxDLni4HU
+
+
+
+Aquasuarious is a collaborative effort between Matthew Moldovan and Gunnar Vittrup: 
+- https://www.linkedin.com/in/matthewjmoldovan/
+- https://www.linkedin.com/in/gvittrup/
+
