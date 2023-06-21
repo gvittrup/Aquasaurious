@@ -9,3 +9,17 @@ The premise of the game is quite simple. You are assuming the role of a hungry s
 ## Design ⚓
 
 The original design of Aquasaurious is a 2D endless scroller. Movement of the character sprite was limited to up, down, left, and right controlled by WASD or arrow keys. Various sprites will enter the scene from the right and continue to the left of the scene until they exit. Depending on the type of sprite, upon collision with the character sprite you will either gain points or be killed and reset.
+
+## Tour of the game ⛴
+
+1. Main Menu 🐙
+
+![Main Menu](assets/mainMenu.png)
+
+2. Playing the game 🕹
+
+![Active Play](assets/activePlay.png)
+
+3. Game Over ☠️
+
+![Game Over](assets/deathScreen.png)
