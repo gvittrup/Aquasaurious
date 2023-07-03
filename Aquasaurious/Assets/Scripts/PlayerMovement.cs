@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         /* This handles the physical movement of the gameobject */
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
         controller.Move(move * Time.deltaTime * playerSpeed);
 
         /* This handles the rotation of the game object */
