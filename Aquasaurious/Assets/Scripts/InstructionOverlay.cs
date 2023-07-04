@@ -14,10 +14,7 @@ public class InstructionOverlay : MonoBehaviour
 
     void Start()
     {
-        if(!flag) {
-            Screen.SetActive(true);
-            flag = true;
-        }
+        Screen.SetActive(true);
     }
 
     void FixedUpdate()
@@ -25,7 +22,7 @@ public class InstructionOverlay : MonoBehaviour
         if(frameCount % 50 == 0)
             timerCount--;
 
-        if(frameCount / 50 == 5)
+        if(frameCount / 50 == 5) 
             Screen.SetActive(false);
 
         timer.SetText(timerCount.ToString());
