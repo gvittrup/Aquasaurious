@@ -1965,7 +1965,7 @@ GameObject:
   - component: {fileID: 909298073}
   - component: {fileID: 909298072}
   - component: {fileID: 909298071}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2206,7 +2206,7 @@ GameObject:
   - component: {fileID: 978401224}
   - component: {fileID: 978401223}
   - component: {fileID: 978401222}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4419,7 +4419,7 @@ GameObject:
   - component: {fileID: 1692555292}
   - component: {fileID: 1692555291}
   - component: {fileID: 1692555290}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4601,7 +4601,7 @@ GameObject:
   - component: {fileID: 1760781387}
   - component: {fileID: 1760781386}
   - component: {fileID: 1760781385}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6195,6 +6195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 667516972}
+  leftBound: {fileID: 909298070}
+  rightBound: {fileID: 1760781384}
   smoothSpeed: 0.75
   offset: {x: 0, y: 0, z: -20}
 --- !u!1 &2059326156
