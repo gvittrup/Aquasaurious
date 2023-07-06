@@ -1,10 +1,10 @@
 # Aquasaurious 🌊
 
-Aquasaurious is the brain child of Matthew Moldovan and Gunnar Vittrup, two young highschool boys who took a more creative route to completing their assignment. What started as a boring and mundane project in a AP Computer Science Principals class quickly transformed into an alternate dimension of shark on its mission to evolve. 
+Aquasaurious is the brain child of Matthew Moldovan and Gunnar Vittrup, two young highschool boys who took a more creative route to completing their assignment. What started as a boring and mundane project in a AP Computer Science Principals class quickly transformed into an alternate dimension of a shark on its mission to evolve. 
 
 ## Premise 🐟
 
-The premise of the game is quite simple. You are assuming the role of a hungry shark on a hunt to continue to eat and grow. However, as you continue to grow the threats you come accross will increase. Threats will not only become more abundant but larger and quicker as well. Continue to feast while overcoming challengers to become to monster of the depths.
+The premise of the game is quite simple. You are assuming the role of a hungry shark on a hunt to continue to eat and grow. However, as you continue to grow the threats you come accross will increase. Threats will not only become more abundant but larger and quicker as well. Continue to feast while overcoming challengers to become the monster of the depths.
 
 ## Design ⚓
 
