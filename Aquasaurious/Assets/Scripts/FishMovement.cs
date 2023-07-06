@@ -18,7 +18,7 @@ public class FishMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x < screenBounds.x / 2) 
+        if(transform.position.x < screenBounds.x * 2) 
         {
             Destroy(this.gameObject);
         }
