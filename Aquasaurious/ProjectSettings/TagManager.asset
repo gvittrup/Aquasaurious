@@ -6,6 +6,7 @@ TagManager:
   tags:
   - X-Axis
   - Y-Axis
+  - Fish
   layers:
   - Default
   - TransparentFX
