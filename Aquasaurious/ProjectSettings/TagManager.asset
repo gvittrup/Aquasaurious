@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - X-Axis
+  - Y-Axis
   - Fish
   layers:
   - Default
@@ -17,7 +19,7 @@ TagManager:
   - 
   - 
   - Boundaries
-  - 
+  - Player
   - 
   - 
   - 
