@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2230,7 +2230,7 @@ GameObject:
   - component: {fileID: 909298071}
   m_Layer: 10
   m_Name: Left
-  m_TagString: Untagged
+  m_TagString: X-Axis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2471,7 +2471,7 @@ GameObject:
   - component: {fileID: 978401222}
   m_Layer: 10
   m_Name: Top
-  m_TagString: Untagged
+  m_TagString: Y-Axis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4789,7 +4789,7 @@ GameObject:
   - component: {fileID: 1692555290}
   m_Layer: 10
   m_Name: Bottom
-  m_TagString: Untagged
+  m_TagString: Y-Axis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5077,7 +5077,7 @@ GameObject:
   - component: {fileID: 1760781388}
   m_Layer: 10
   m_Name: Right
-  m_TagString: Untagged
+  m_TagString: X-Axis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
