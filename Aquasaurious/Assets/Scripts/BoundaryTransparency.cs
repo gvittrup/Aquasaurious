@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoundaryTransparency : MonoBehaviour
 {
+
     public Transform player;
     public GameObject wall;
     Transform boundary;
