@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 82378276}
   - component: {fileID: 82378275}
   - component: {fileID: 82378279}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82378274}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07a0b03e99c6d4d6e8c9c8f0f0ef3c3e, type: 3}
   m_Name: 
@@ -2206,7 +2206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3779da026f4340d69f97639ac450c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ground: {fileID: 82378274}
 --- !u!4 &667516972
 Transform:
   m_ObjectHideFlags: 0
@@ -4024,7 +4023,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ca0209581c24c2ba832780f5ee1cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubePrefab: {fileID: 2061797129068757024, guid: 81d937a1c595c48208632379d35278b0, type: 3}
+  objects:
+  - {fileID: 4338668679310810186, guid: 2b425e63589ea4086847ec77707bbdc7, type: 3}
+  - {fileID: 7024507834020250945, guid: f228a7c9dffc3470286be170ebab3329, type: 3}
+  - {fileID: 7104540614823163155, guid: 3eeb5425e0e5748afbc5419d08fdbd15, type: 3}
+  fish: {fileID: 2061797129068757024, guid: 81d937a1c595c48208632379d35278b0, type: 3}
+  ground: {fileID: 82378274}
   stopSpawning: 0
   spawnTime: 6
   spawnDelay: 1
@@ -5159,7 +5163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1692555290
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7212,7 +7216,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.25
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
