@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1079011688514203089}
   - component: {fileID: 2118894257857011764}
   - component: {fileID: -6499625684281224323}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ Rigidbody:
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 1024

@@ -11,7 +11,7 @@ public class RandomSpawner : MonoBehaviour
     public float spawnTime;
     public float spawnDelay;
 
-    int[] zRanges = new int[] {-15, -10, 0, 15};
+    int[] zValues = new int[] {-25, -15, 0, 0, 20};
 
     void Start()
     {
@@ -26,11 +26,11 @@ public class RandomSpawner : MonoBehaviour
 
         //Handles spawning of atmosphere elements, such as bottles and coral
         int randomObject = Random.Range(0,3);
-        int randomZ = Random.Range(0,4);
+        int randomZ = Random.Range(0,5);
         if(objects[randomObject].gameObject.tag == "Ground") {
-            randomSpawnPosition = new Vector3(50, ground.transform.position.y, zRanges[randomZ]);
+            randomSpawnPosition = new Vector3(50, ground.transform.position.y, zValues[randomZ]);
         } else {
-            randomSpawnPosition = new Vector3(50, Random.Range(-8,8), zRanges[randomZ]);
+            randomSpawnPosition = new Vector3(50, Random.Range(-8,8), zValues[randomZ]);
         }
         Instantiate(objects[randomObject], randomSpawnPosition, Quaternion.identity);
 
