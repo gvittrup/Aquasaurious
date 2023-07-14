@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Water
+  m_Name: m_Water
   m_Shader: {fileID: -6465566751694194690, guid: 9265236296942430f8f2647468dc4475, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -29,7 +29,7 @@ Material:
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3007
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -50,13 +50,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Alpha: 1
     - _DisplacementScale: 0.01
     - _QueueControl: 0
-    - _QueueOffset: 0
+    - _QueueOffset: 7
     - _RippleDensity: 7
     - _RippleSlimness: 5
     - _RippleSpeed: 1
-    - _WaveSpeed: 0.1
+    - _WaveSpeed: 0.5
     m_Colors:
     - _BaseColor: {r: 0.15566039, g: 0.6464772, b: 1, a: 0}
     - _RippleColor: {r: 0, g: 1, b: 0.9335954, a: 0}
