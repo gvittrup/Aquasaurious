@@ -26,7 +26,9 @@ public class FishMovement : MonoBehaviour
 
         private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Player")
+
+        //If the collision object is by either a fish or a ground element (coral) and against the player
+        if(collision.gameObject.tag == "Player" && (gameObject.tag == "Fish"|| gameObject.tag == "Ground"))
         {
             Destroy(gameObject);
         }

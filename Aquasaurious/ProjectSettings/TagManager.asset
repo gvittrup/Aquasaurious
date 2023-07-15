@@ -7,6 +7,8 @@ TagManager:
   - X-Axis
   - Y-Axis
   - Fish
+  - Ground
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -20,8 +22,8 @@ TagManager:
   - 
   - Boundaries
   - Player
-  - 
-  - 
+  - Scene
+  - Chunk
   - 
   - 
   - 
