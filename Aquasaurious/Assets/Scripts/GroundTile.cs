@@ -13,7 +13,6 @@ public class GroundTile : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-        Debug.Log("Colliding");
         gs.SpawnGround();
         Destroy(gameObject, 2);
     }

@@ -10,7 +10,6 @@ public class WaterSpawner : MonoBehaviour
     private Rigidbody rb;
     private bool start = true;
     private GameObject temp;
-    public Vector3 spawnpoint;
 
     void Start() {
         for(int i = 0; i < 4; i++) {
@@ -21,7 +20,6 @@ public class WaterSpawner : MonoBehaviour
 
     void Update() {
         nextSpawnPoint = temp.transform.GetChild(1).transform.position;
-        spawnpoint = nextSpawnPoint;
     }
 
     public void SpawnWater() {
