@@ -2359,6 +2359,7 @@ GameObject:
   - component: {fileID: 667516974}
   - component: {fileID: 667516975}
   - component: {fileID: 667516976}
+  - component: {fileID: 667516977}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -2458,6 +2459,18 @@ MonoBehaviour:
   scoreText: {fileID: 1881026741}
   ScoreScreen: {fileID: 1510236224}
   InstructionScreen: {fileID: 1857534696}
+--- !u!114 &667516977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667516970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5607655d435074395be61106d21073f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &695362769
 GameObject:
   m_ObjectHideFlags: 0
@@ -4252,6 +4265,7 @@ GameObject:
   - component: {fileID: 1275944721}
   - component: {fileID: 1275944724}
   - component: {fileID: 1275944723}
+  - component: {fileID: 1275944725}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -4277,7 +4291,7 @@ MonoBehaviour:
   - {fileID: 7104540614823163155, guid: 3eeb5425e0e5748afbc5419d08fdbd15, type: 3}
   fish: {fileID: 2061797129068757024, guid: 81d937a1c595c48208632379d35278b0, type: 3}
   ground: {fileID: 82378274}
-  stopSpawning: 0
+  stopSpawning: 1
   spawnTime: 6
   spawnDelay: 1
 --- !u!4 &1275944722
@@ -4321,6 +4335,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tile: {fileID: 3516455691405656729, guid: 248a055b28b814b29812aa02921d98fb, type: 3}
+--- !u!114 &1275944725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275944720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69d2fb6ff856491ea2165175afab658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killFish: {fileID: 6683025165585648056, guid: 2b7c80febfb48445194666a3847a8469, type: 3}
+  stopSpawning: 0
+  spawnTime: 0
+  spawnDelay: 1
 --- !u!1 &1422928728
 GameObject:
   m_ObjectHideFlags: 0
@@ -11923,7 +11953,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1961605028
 Transform:
   m_ObjectHideFlags: 0

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class FishMovement : MonoBehaviour
 {
@@ -32,5 +34,20 @@ public class FishMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        //If KillFish and Fish collide
+        if(collision.gameObject.tag == "KillFish" && gameObject.tag == "Fish")
+        {
+            Destroy(gameObject);
+        }
+
+        //If KillFish and Fish collide
+        if(collision.gameObject.tag == "Player" && gameObject.tag == "KillFish")
+        {
+            Debug.Log("Farts!!!!");
+            Destroy(gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Fish
   - Ground
   - Water
+  - KillFish
   layers:
   - Default
   - TransparentFX
