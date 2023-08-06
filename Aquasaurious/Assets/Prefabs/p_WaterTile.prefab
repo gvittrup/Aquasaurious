@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6123268033850047206}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: nextSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 6142487558620282805}
   - component: {fileID: 697038074667942630}
   - component: {fileID: 3721281650095212428}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Water Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5754711978890413996}
   - component: {fileID: 500244285933360038}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: collisionTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 4676208920983167605}
   - component: {fileID: 9112653197622411429}
   - component: {fileID: -3762585443586263300}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: p_WaterTile
   m_TagString: Water
   m_Icon: {fileID: 0}

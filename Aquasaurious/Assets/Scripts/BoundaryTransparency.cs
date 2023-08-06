@@ -22,10 +22,13 @@ public class BoundaryTransparency : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider collider) {
+
         if(wall.tag == "X-Axis")
             value = (player.position.x - boundary.position.x) / (wall.transform.position.x - boundary.position.x);
         else value = (player.position.y - boundary.position.y) / (wall.transform.position.y - boundary.position.y);
         
+        Debug.Log("Player: " + player.position + ",   Boundary: " + boundary.position + ",   Wall: " + wall.transform.position);
+
         color.a = Mathf.Lerp(0.0f, 1.0f, value);
         renderer.material.color = color;
     }
