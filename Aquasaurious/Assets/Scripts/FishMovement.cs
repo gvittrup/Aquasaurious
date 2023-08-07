@@ -30,24 +30,21 @@ public class FishMovement : MonoBehaviour
     {
 
         //If the collision object is by either a fish or a ground element (coral) and against the player
-        if(collision.gameObject.tag == "Player" && (gameObject.tag == "Fish"|| gameObject.tag == "Ground"))
+        if(collision.gameObject.CompareTag("Player") && (gameObject.CompareTag("Fish")|| gameObject.CompareTag("Ground")))
         {
             Destroy(gameObject);
-        }
-
-        //If KillFish and Fish collide
-        if(collision.gameObject.tag == "KillFish" && gameObject.tag == "Fish")
+        } else if(collision.gameObject.CompareTag("Player") && gameObject.CompareTag("KillFish")) //If KillFish and Fish collide 
         {
-            Destroy(gameObject);
-        }
-
-        //If KillFish and Fish collide
-        if(collision.gameObject.tag == "Player" && gameObject.tag == "KillFish")
-        {
-            Debug.Log("Farts!!!!");
             Destroy(gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        } else if(collision.gameObject.CompareTag("KillFish") && gameObject.CompareTag("Fish")) //If KillFish and Fish collide
+        {
+            Destroy(gameObject);
+        } else if(collision.gameObject.CompareTag("SceneBoundary") && gameObject.CompareTag("SceneComponent")) {
+            rb.AddForce(-5.0f, 0f, 0f, ForceMode.Impulse);
         }
+
+
 
     }
 }

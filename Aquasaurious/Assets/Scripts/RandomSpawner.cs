@@ -27,8 +27,12 @@ public class RandomSpawner : MonoBehaviour
         //Handles spawning of atmosphere elements, such as bottles and coral
         int randomObject = Random.Range(0,3);
         int randomZ = Random.Range(0,5);
-        if(objects[randomObject].gameObject.tag == "Ground") {
-            randomSpawnPosition = new Vector3(50, ground.transform.position.y, zValues[randomZ]);
+        if(objects[randomObject].gameObject.CompareTag("Ground")) {
+
+            //Y Value is hard-coded AT THE MOMENT
+            // randomSpawnPosition = new Vector3(50, ground.transform.position.y, zValues[randomZ]);
+            randomSpawnPosition = new Vector3(50, -4.5f, zValues[randomZ] - 1.45f);
+
         } else {
             randomSpawnPosition = new Vector3(50, Random.Range(-8,8), zValues[randomZ]);
         }
