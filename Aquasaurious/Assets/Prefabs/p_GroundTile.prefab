@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 726594679121404218}
   - component: {fileID: 5483556578486230409}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: collisionTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 3791235458616850624}
   - component: {fileID: 8031416626930124560}
   - component: {fileID: 6675245311624797832}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: p_GroundTile
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7851475724114439284}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: nextSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 6263916194248521075}
   - component: {fileID: 5397439685077118862}
   - component: {fileID: 8350687795765716100}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
