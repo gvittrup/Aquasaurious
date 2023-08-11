@@ -12,6 +12,7 @@ TagManager:
   - KillFish
   - SceneBoundary
   - SceneComponent
+  - Destructable
   layers:
   - Default
   - TransparentFX

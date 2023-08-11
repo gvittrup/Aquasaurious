@@ -47,7 +47,6 @@ public class FishMovement : MonoBehaviour
                         break;
                     case "Ground":
                         collision.gameObject.GetComponent<PlayerMovement>().Debuff();
-                        Destroy(gameObject);
                         break;
                     case "KillFish":
                         Destroy(gameObject);

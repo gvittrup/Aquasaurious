@@ -30,8 +30,8 @@ public class RandomSpawner : MonoBehaviour
         if(objects[randomObject].gameObject.CompareTag("Ground")) {
 
             //Y Value is hard-coded AT THE MOMENT
-            // randomSpawnPosition = new Vector3(50, ground.transform.position.y, zValues[randomZ]);
-            randomSpawnPosition = new Vector3(50, -4.5f, zValues[randomZ] - 1.45f);
+            randomSpawnPosition = new Vector3(50, ground.transform.position.y, zValues[randomZ]);
+            // randomSpawnPosition = new Vector3(50, -10.5f, zValues[randomZ]);
 
         } else {
             randomSpawnPosition = new Vector3(50, Random.Range(-8,8), zValues[randomZ]);
