@@ -17,7 +17,7 @@ public class FishMovement : MonoBehaviour
 
         // This is to prevent objects from being static - adds atmospheric rotation
         if(gameObject.CompareTag("SceneComponent")) { 
-            Vector3 torque = new Vector3(Random.Range(-25f, 25f), Random.Range(-25f, 25f), Random.Range(-25f, 25f)); 
+            Vector3 torque = new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), Random.Range(-10f, 10f)); 
             rb.AddTorque(torque);
         }
 

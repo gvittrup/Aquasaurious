@@ -7,6 +7,13 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
 
+    private float[] transparency = { .05f, .1f, .15f, .2f, .25f, .3f, .35f, .4f, .45f, 0.5f,
+                                .55f, .6f, .65f, .7f, .75f, .8f, .85f, .9f, .95f, 1f,
+                                .95f, .9f, .85f, .75f, .7f, .65f, .6f, .55f, .5f,
+                                .45f, .4f, .35f, .3f, .25f, .2f, .15f, .1f, .05f };
+
+    private Renderer renderer;
+    private Color color;
     private Rigidbody rb;
     private Vector3 playerVelocity;
     private float playerSpeed = 5.0f;
@@ -36,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb ??= GetComponent<Rigidbody>();
+        renderer = gameObject.transform.GetChild(1).transform.GetComponent<Renderer>();
+        color = renderer.material.color;
     }
 
     void Update()
@@ -61,19 +70,31 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    void FixedUpdate() {
-        if(playerSpeed < speedConstant) {
-            playerSpeed = Mathf.Lerp(playerSpeed, speedConstant, frameCount/720.0f);
-            frameCount++;
-        } else {
-            health = 1.0f;
-        }
-    }
+    public void Debuff() { StartCoroutine(StatusEffects(2f, 0.01f)); }
 
-    public void Debuff() {
-        playerSpeed = 1.0f;
-        frameCount = 0.0f;
+    IEnumerator StatusEffects(float time, float intervalTime)
+    {
         health -= 0.5f;
+        playerSpeed = 3.0f;
+
+        float elapsedTime = 0f;
+        int index = 0;
+        while(elapsedTime < time)
+        {
+            color.a = transparency[index % transparency.Length];
+            renderer.material.color = color;
+
+            elapsedTime += Time.deltaTime;
+            playerSpeed += Time.deltaTime;
+            index++;
+
+            yield return new WaitForSecondsRealtime(intervalTime);
+        }
+
+        playerSpeed = speedConstant;
+        health = 1.0f;
+        color.a = 1.0f;
+        renderer.material.color = color;
     }
 
     public void End() {
