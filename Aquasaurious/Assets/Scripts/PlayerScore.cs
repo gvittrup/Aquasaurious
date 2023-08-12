@@ -9,6 +9,7 @@ public class PlayerScore : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public GameObject ScoreScreen;
     public GameObject InstructionScreen;
+    public float levelUpMarker = 25.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,7 @@ public class PlayerScore : MonoBehaviour
         {
             AddScore();
 
-            if(score % 5 == 0) { 
+            if(score % levelUpMarker == 0) { 
                 gameObject.GetComponent<PlayerMovement>().LevelUp();
             }
         }
