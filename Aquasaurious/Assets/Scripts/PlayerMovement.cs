@@ -21,6 +21,10 @@ public class PlayerMovement : MonoBehaviour
     private float health = 1.0f;
     private float rotationSpeed = 720f;
     private float frameCount = 0.0f;
+    private ParticleSystem ps;
+
+    public float speedLevelUpFactor = 0.5f;
+    public float sizeLevelUpFactor = 0.02f;
 
     public PlayerControls playerControls;
     private InputAction swim;
@@ -45,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         rb ??= GetComponent<Rigidbody>();
         renderer = gameObject.transform.GetChild(1).transform.GetComponent<Renderer>();
         color = renderer.material.color;
+        ps = GameObject.Find("LevelUp").GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -95,6 +100,17 @@ public class PlayerMovement : MonoBehaviour
         health = 1.0f;
         color.a = 1.0f;
         renderer.material.color = color;
+    }
+
+    public void LevelUp() {
+        speedConstant += speedLevelUpFactor;
+        playerSpeed = speedConstant;
+
+        Vector3 newScale = new Vector3(sizeLevelUpFactor, sizeLevelUpFactor, sizeLevelUpFactor);
+        newScale += gameObject.transform.localScale;
+
+        gameObject.transform.localScale = newScale;
+        ps.Play();
     }
 
     public void End() {

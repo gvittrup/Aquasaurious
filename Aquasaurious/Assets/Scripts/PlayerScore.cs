@@ -18,6 +18,7 @@ public class PlayerScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(!InstructionScreen.activeSelf)
         {
             ScoreScreen.SetActive(true);
@@ -30,6 +31,10 @@ public class PlayerScore : MonoBehaviour
         if(collision.gameObject.tag == "Fish")
         {
             AddScore();
+
+            if(score % 5 == 0) { 
+                gameObject.GetComponent<PlayerMovement>().LevelUp();
+            }
         }
     }
 
