@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - X-Axis
+  - Y-Axis
+  - Fish
+  - Ground
+  - Water
+  - KillFish
+  - SceneBoundary
+  - SceneComponent
+  - Destructable
   layers:
   - Default
   - TransparentFX
@@ -11,14 +20,14 @@ TagManager:
   - 
   - Water
   - UI
+  - Post
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Boundaries
+  - Player
+  - Scene
+  - Chunk
   - 
   - 
   - 
