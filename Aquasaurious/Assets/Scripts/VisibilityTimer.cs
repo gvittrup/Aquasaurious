@@ -22,7 +22,6 @@ public class VisibilityTimer : MonoBehaviour
 
             if(color.a < 0.0f) break;
 
-            Debug.Log(1.0f - elapsedTime);
             color.a = 1.0f - elapsedTime;
             GetComponent<Renderer>().material.color = color;
 
