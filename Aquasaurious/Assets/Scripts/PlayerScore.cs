@@ -42,5 +42,9 @@ public class PlayerScore : MonoBehaviour
     void AddScore()
     {
         score ++;
+        if(!gameObject.GetComponent<PlayerMovement>().isDead)
+        {
+            score ++;
+        }
     }
 }

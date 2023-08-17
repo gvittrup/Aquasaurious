@@ -29,6 +29,9 @@ public class PlayerMovement : MonoBehaviour
     public PlayerControls playerControls;
     private InputAction swim;
 
+    public GameManagerScript gameManager;
+    public bool isDead;
+
 
     private void Awake() {
         playerControls = new PlayerControls();
@@ -113,8 +116,16 @@ public class PlayerMovement : MonoBehaviour
         ps.Play();
     }
 
+    //This handles game over canvas and disables player movement
     public void End() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if(!isDead){
+            isDead = true;
+            swim.Disable();
+            gameManager.gameOver();
+
+        }
+
+
     }
 
 
