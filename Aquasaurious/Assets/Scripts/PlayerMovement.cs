@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
 
     public GameManagerScript gameManager;
     public bool isDead;
+    private ConstantForce cForce;
+    private Vector3 forceDirection;
 
 
     private void Awake() {
@@ -118,11 +120,15 @@ public class PlayerMovement : MonoBehaviour
 
     //This handles game over canvas and disables player movement
     public void End() {
+
+        
         if(!isDead){
             isDead = true;
-            swim.Disable();
             gameManager.gameOver();
-
+            swim.Disable();
+            cForce= GetComponent<ConstantForce>();
+            forceDirection = new Vector3(0,-75,0);
+            cForce.force = forceDirection;
         }
 
 
