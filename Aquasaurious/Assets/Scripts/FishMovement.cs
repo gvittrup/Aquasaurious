@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class FishMovement : MonoBehaviour
 {
+    AudioSource audioSource;
+
     public float speed = 5.0f;
     private Rigidbody rb;
     private Vector3 screenBounds;
@@ -43,12 +45,16 @@ public class FishMovement : MonoBehaviour
             case "Player":
                 switch(gameObject.tag) {
                     case "Fish":
+                        audioSource = collision.gameObject.GetComponent<AudioSource>();
+                        audioSource.Play();
                         Destroy(gameObject);
                         break;
                     case "Ground":
                         collision.gameObject.GetComponent<PlayerMovement>().Debuff();
                         break;
                     case "SceneComponent":
+                        audioSource = gameObject.GetComponent<AudioSource>();
+                        audioSource.Play();
                         collision.gameObject.GetComponent<PlayerMovement>().Debuff();
                         break;
                     case "KillFish":
