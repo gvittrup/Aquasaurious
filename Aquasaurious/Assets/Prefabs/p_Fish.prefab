@@ -146,4 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f88184745ee4faba6abd7077044f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chomp: {fileID: 8300000, guid: 1131524c892254c8a9b270580051915a, type: 3}
   speed: 5
