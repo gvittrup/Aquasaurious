@@ -7,9 +7,12 @@ public class GameManagerScript : MonoBehaviour
 {
     public GameObject gameOverUI, startUI, instructionUI, optionsUI, scoreUI, player;
     private PlayerMovement pm;
+    private PlayerScore ps;
 
     void Start() {
         pm = player.GetComponent<PlayerMovement>();
+        ps = player.GetComponent<PlayerScore>();
+
         player.SetActive(false);
         pm.ToggleSwim(false);
 
@@ -38,7 +41,11 @@ public class GameManagerScript : MonoBehaviour
     //Handles restart button
     public void restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        player.transform.position = new Vector3(0f, 0f, 0f);
+        pm.ToggleSwim(true);
+        ps.SetScore(0);
+        pm.isDead = false;
+        gameOverUI.SetActive(false);
     }
 
     //Handles main menu button
