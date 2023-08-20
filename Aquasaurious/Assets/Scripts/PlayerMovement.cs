@@ -49,6 +49,11 @@ public class PlayerMovement : MonoBehaviour
         swim.Disable();
     }
 
+    public void ToggleSwim(bool x) {
+        if(x) swim.Enable();
+        else swim.Disable();
+    }
+
     private void Start()
     {
         rb ??= GetComponent<Rigidbody>();

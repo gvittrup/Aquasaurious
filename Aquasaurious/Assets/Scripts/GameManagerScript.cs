@@ -5,7 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public GameObject gameOverUI;
+    public GameObject gameOverUI, startUI, instructionUI, optionsUI, scoreUI, player;
+    private PlayerMovement pm;
+
+    void Start() {
+        pm = player.GetComponent<PlayerMovement>();
+        player.SetActive(false);
+        pm.ToggleSwim(false);
+
+        startUI.SetActive(true);
+        scoreUI.SetActive(false);
+    }
+
+    public void play() {
+        startUI.SetActive(false);
+        instructionUI.SetActive(true);
+        pm.ToggleSwim(true);
+        player.SetActive(true);
+    }
+
+    public void options() {
+        startUI.SetActive(false);
+        optionsUI.SetActive(true);
+    }
 
     //Enables game over canvas
     public void gameOver()
@@ -27,6 +49,10 @@ public class GameManagerScript : MonoBehaviour
 
     //Handles quit button
     public void quit(){
-        Application.Quit();
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
 }
