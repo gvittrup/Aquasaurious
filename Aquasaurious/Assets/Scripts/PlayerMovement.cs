@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 playerVelocity;
     private float playerSpeed = 5.0f;
     private float speedConstant = 0.0f;
-    private float health = 1.0f;
+    public float health = 1.0f;
     private float rotationSpeed = 720f;
     private float frameCount = 0.0f;
     private ParticleSystem ps;
@@ -47,6 +47,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDisable() {
         swim.Disable();
+    }
+
+    public void ToggleSwim(bool x) {
+        if(x) swim.Enable();
+        else swim.Disable();
     }
 
     private void Start()
@@ -80,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    // Simulates ~5 seconds
     public void Debuff() { StartCoroutine(StatusEffects(2f, 0.01f)); }
 
     IEnumerator StatusEffects(float time, float intervalTime)
@@ -89,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
         float elapsedTime = 0f;
         int index = 0;
-        while(elapsedTime < time)
+        while(elapsedTime < time && health != 1.0f)
         {
             color.a = transparency[index % transparency.Length];
             renderer.material.color = color;
@@ -105,6 +111,28 @@ public class PlayerMovement : MonoBehaviour
         health = 1.0f;
         color.a = 1.0f;
         renderer.material.color = color;
+    }
+
+    public void Spawn() { StartCoroutine(SpawnAnim(0.005f)); }
+
+    IEnumerator SpawnAnim(float intervalTime)
+    {
+        int layer = LayerMask.NameToLayer("Null");
+        gameObject.transform.position = new Vector3(-25f, 0f, 0f);
+        gameObject.layer = layer;
+
+        while(gameObject.transform.position.x <= 0.0f)
+        {
+            Vector3 difference = new Vector3(0.1f, 0.0f, 0.0f);
+            gameObject.transform.position += difference;
+            yield return new WaitForSecondsRealtime(intervalTime);
+        }
+
+        isDead = false;
+        health = 1.0f;
+        ToggleSwim(true);
+        layer = LayerMask.NameToLayer("Player");
+        gameObject.layer = layer;
     }
 
     public void LevelUp() {

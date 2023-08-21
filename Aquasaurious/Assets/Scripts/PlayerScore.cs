@@ -46,4 +46,8 @@ public class PlayerScore : MonoBehaviour
             score ++;
         }
     }
+
+    public void SetScore(int s) {
+        score = s;
+    }
 }
