@@ -25,6 +25,7 @@ public class GameManagerScript : MonoBehaviour
         instructionUI.SetActive(true);
         pm.ToggleSwim(true);
         player.SetActive(true);
+        pm.Spawn();
     }
 
     public void options() {
@@ -41,17 +42,19 @@ public class GameManagerScript : MonoBehaviour
     //Handles restart button
     public void restart()
     {
-        player.transform.position = new Vector3(0f, 0f, 0f);
+        pm.Spawn();
+        // player.transform.position = new Vector3(0f, 0f, 0f);
         pm.ToggleSwim(true);
         ps.SetScore(0);
         pm.isDead = false;
+        pm.health = 1.0f;
         gameOverUI.SetActive(false);
     }
 
     //Handles main menu button
     public void mainMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     //Handles quit button

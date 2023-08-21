@@ -18,7 +18,6 @@ public class MusicManager : MonoBehaviour
     void Update() {
         if(!audioSource.isPlaying) {
             audioSource.clip = getRandomClip();
-            Debug.Log(audioSource.clip);
             audioSource.Play();
         }
     }
