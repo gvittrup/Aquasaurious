@@ -38,7 +38,6 @@ public class RandomSpawner : MonoBehaviour
 
         StartCoroutine(spawnObjectsCR);
         StartCoroutine(spawnFishCR);
-        StartCoroutine(spawnKillFishCR);
     }
 
     void Update() {
