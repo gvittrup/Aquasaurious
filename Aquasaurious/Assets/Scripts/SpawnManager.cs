@@ -13,15 +13,15 @@ public class RandomSpawner : MonoBehaviour
     public Transform ground;
 
     public bool stopSpawning = false;
-    private bool kf = false;
 
     private int localDifficulty;
 
     private IEnumerator spawnFishCR, spawnObjectsCR, spawnKillFishCR;
+    private bool kf = false;
 
-    private float OBJECT_INTERVAL = 1.0f;
-    private float FISH_INTERVAL = 1.5f;
-    private float KILLFISH_INTERVAL = 2.0f;
+    private float OBJECT_INTERVAL = 2.0f;
+    private float FISH_INTERVAL = 4.0f;
+    private float KILLFISH_INTERVAL = 6.0f;
 
     int[] zValues = new int[] {-25, -15, 0, 0, 20};
  
@@ -36,11 +36,9 @@ public class RandomSpawner : MonoBehaviour
 
         localDifficulty = pm.level;
 
-        // InvokeRepeating("SpawnObjects", 0.0f, OBJECT_INTERVAL);
-        // InvokeRepeating("SpawnFish", 0.0f, FISH_INTERVAL);
-
         StartCoroutine(spawnObjectsCR);
         StartCoroutine(spawnFishCR);
+        StartCoroutine(spawnKillFishCR);
     }
 
     void Update() {
@@ -55,7 +53,7 @@ public class RandomSpawner : MonoBehaviour
         if(localDifficulty < pm.level) increaseDifficulty();
 
         // This section of code begins spawning kill fish once the players score is >= 25
-        if(ps.score >= 25 && !kf) {
+        if(ps.score >= ps.LEVEL_UP_LIMIT && !kf) {
             StartCoroutine(SpawnKillFish(KILLFISH_INTERVAL));
             kf = true;
         }
@@ -82,9 +80,9 @@ public class RandomSpawner : MonoBehaviour
         StopAllCoroutines();
         
         localDifficulty = pm.level;
-        OBJECT_INTERVAL -= 0.1f;
-        FISH_INTERVAL -= 0.1f;
-        KILLFISH_INTERVAL -= 0.1f;
+        OBJECT_INTERVAL -= 0.2f;
+        FISH_INTERVAL -= 0.4f;
+        KILLFISH_INTERVAL -= 0.2f;
 
         StartAllCoroutines();
     }
