@@ -9,7 +9,7 @@ public class PlayerScore : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public GameObject ScoreScreen;
     public GameObject InstructionScreen;
-    public float LEVEL_UP_LIMIT = 25.0f;
+    public int LEVEL_UP_LIMIT = 25;
 
     void Start()
     {
@@ -32,7 +32,8 @@ public class PlayerScore : MonoBehaviour
         {
             AddScore(1);
 
-            if(score % LEVEL_UP_LIMIT == 0) { 
+            if((score % LEVEL_UP_LIMIT) == 0) { 
+                Debug.Log("This was called in PlayerScore");
                 gameObject.GetComponent<PlayerMovement>().LevelUp();
             }
         }
