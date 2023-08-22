@@ -16,12 +16,16 @@ public class PlayerMovement : MonoBehaviour
     private Color color;
     private Rigidbody rb;
     private Vector3 playerVelocity;
-    private float playerSpeed = 5.0f;
-    private float speedConstant = 0.0f;
-    public float health = 1.0f;
     private float rotationSpeed = 720f;
     private float frameCount = 0.0f;
-    private ParticleSystem ps;
+    private ParticleSystem particle;
+
+    private float playerSpeed = 5.0f;
+    private float speedConstant = 0.0f;
+    public bool isDead;
+    public float health = 1.0f;
+    public int level = 1;
+
 
     public float speedLevelUpFactor = 0.5f;
     public float sizeLevelUpFactor = 0.02f;
@@ -30,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
     private InputAction swim;
 
     public GameManagerScript gameManager;
-    public bool isDead;
     private ConstantForce cForce;
     private Vector3 forceDirection;
 
@@ -59,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         rb ??= GetComponent<Rigidbody>();
         renderer = gameObject.transform.GetChild(1).transform.GetComponent<Renderer>();
         color = renderer.material.color;
-        ps = GameObject.Find("LevelUp").GetComponent<ParticleSystem>();
+        particle = GameObject.Find("LevelUp").GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -136,6 +139,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void LevelUp() {
+        Debug.Log("You leveled up!");
+
+        level++;
+
         speedConstant += speedLevelUpFactor;
         playerSpeed = speedConstant;
 
@@ -143,7 +150,7 @@ public class PlayerMovement : MonoBehaviour
         newScale += gameObject.transform.localScale;
 
         gameObject.transform.localScale = newScale;
-        ps.Play();
+        particle.Play();
     }
 
     //This handles game over canvas and disables player movement

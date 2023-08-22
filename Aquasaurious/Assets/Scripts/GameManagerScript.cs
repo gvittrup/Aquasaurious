@@ -15,6 +15,7 @@ public class GameManagerScript : MonoBehaviour
 
         player.SetActive(false);
         pm.ToggleSwim(false);
+        pm.isDead = true;
 
         startUI.SetActive(true);
         scoreUI.SetActive(false);
@@ -43,11 +44,7 @@ public class GameManagerScript : MonoBehaviour
     public void restart()
     {
         pm.Spawn();
-        // player.transform.position = new Vector3(0f, 0f, 0f);
-        pm.ToggleSwim(true);
         ps.SetScore(0);
-        pm.isDead = false;
-        pm.health = 1.0f;
         gameOverUI.SetActive(false);
     }
 
