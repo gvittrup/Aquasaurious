@@ -24475,7 +24475,7 @@ MonoBehaviour:
   scoreText: {fileID: 1881026741}
   ScoreScreen: {fileID: 1510236224}
   InstructionScreen: {fileID: 1857534696}
-  LEVEL_UP_LIMIT: 5
+  LEVEL_UP_LIMIT: 25
 --- !u!75 &2145152373
 ConstantForce:
   m_ObjectHideFlags: 0

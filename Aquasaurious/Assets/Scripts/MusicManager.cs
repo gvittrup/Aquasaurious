@@ -17,11 +17,16 @@ public class MusicManager : MonoBehaviour
 
     void Update() {
         if(!audioSource.isPlaying) {
-            audioSource.clip = getRandomClip();
+            AudioClip ac = GetRandomClip();
+
+            while(ac == audioSource.clip)
+                ac = GetRandomClip();
+
+            audioSource.clip = ac;
             audioSource.Play();
         }
     }
 
-    private AudioClip getRandomClip() { return audioClips[Random.Range(0, audioClips.Length)]; }
+    private AudioClip GetRandomClip() { return audioClips[Random.Range(0, audioClips.Length)]; }
 
 }

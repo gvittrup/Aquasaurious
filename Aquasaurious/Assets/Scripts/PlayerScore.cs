@@ -33,7 +33,6 @@ public class PlayerScore : MonoBehaviour
             AddScore(1);
 
             if((score % LEVEL_UP_LIMIT) == 0) { 
-                Debug.Log("This was called in PlayerScore");
                 gameObject.GetComponent<PlayerMovement>().LevelUp();
             }
         }

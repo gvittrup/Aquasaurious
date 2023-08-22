@@ -122,7 +122,16 @@ public class PlayerMovement : MonoBehaviour
     {
         int layer = LayerMask.NameToLayer("Null");
         gameObject.transform.position = new Vector3(-25f, 0f, 0f);
+        gameObject.transform.rotation = new Quaternion(0.00000f, -0.70711f, 0.00000f, 0.70711f);
         gameObject.layer = layer;
+
+        cForce= GetComponent<ConstantForce>();
+        forceDirection = new Vector3(0,0,0);
+        cForce.force = forceDirection;
+
+        isDead = false;
+        health = 1.0f;
+        ToggleSwim(true);
 
         while(gameObject.transform.position.x <= 0.0f)
         {
@@ -131,9 +140,6 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSecondsRealtime(intervalTime);
         }
 
-        isDead = false;
-        health = 1.0f;
-        ToggleSwim(true);
         layer = LayerMask.NameToLayer("Player");
         gameObject.layer = layer;
     }
@@ -161,6 +167,7 @@ public class PlayerMovement : MonoBehaviour
             isDead = true;
             gameManager.gameOver();
             swim.Disable();
+            
             cForce= GetComponent<ConstantForce>();
             forceDirection = new Vector3(0,-75,0);
             cForce.force = forceDirection;
