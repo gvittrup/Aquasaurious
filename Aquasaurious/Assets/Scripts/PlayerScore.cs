@@ -9,14 +9,13 @@ public class PlayerScore : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public GameObject ScoreScreen;
     public GameObject InstructionScreen;
-    public float levelUpMarker = 25.0f;
-    // Start is called before the first frame update
+    public float LEVEL_UP_LIMIT = 25.0f;
+
     void Start()
     {
         ScoreScreen.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -31,19 +30,19 @@ public class PlayerScore : MonoBehaviour
     {
         if(collision.gameObject.tag == "Fish")
         {
-            AddScore();
+            AddScore(1);
 
-            if(score % levelUpMarker == 0) { 
+            if(score % LEVEL_UP_LIMIT == 0) { 
                 gameObject.GetComponent<PlayerMovement>().LevelUp();
             }
         }
     }
 
-    void AddScore()
+    void AddScore(int s)
     {
         if(!gameObject.GetComponent<PlayerMovement>().isDead)
         {
-            score ++;
+            score += s;
         }
     }
 
